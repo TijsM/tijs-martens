@@ -1,13 +1,22 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Head, Main, NextScript } from "next/document";
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+export default class MyDocument extends Document {
+  static getInitialProps({ renderPage }) {
+    // Returns an object like: { html, head, errorHtml, chunks, styles }
+    return renderPage();
+  }
+
+  render() {
+    return (
+      <html>
+        <Head>
+          {/* <title>Thanks Jos!</title> */}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    );
+  }
 }
