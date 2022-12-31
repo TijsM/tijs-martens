@@ -16,6 +16,7 @@ export const Body = styled.p`
   color: white;
   font-size: 16px;
   padding-top: 16px;
+  opacity: 0.6;
 `;
 
 export const StArticle = styled.article`

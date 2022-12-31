@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import Airtable from "airtable";
 
-type Data = {
+export type ArticleData = {
   title: string;
   body: string;
   link: string;
@@ -14,9 +14,9 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<ArticleData[]>
 ) {
-  const airtableData: Data[] = [];
+  const airtableData: ArticleData[] = [];
 
   base("Articles")
     .select({
@@ -44,5 +44,4 @@ export default function handler(
         }
       }
     );
-  // res.status(200).json({ name: 'John Doe' })
 }

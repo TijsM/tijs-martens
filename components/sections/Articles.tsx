@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ProjectData } from "../../pages/api/projects";
+import { ArticleData } from "../../pages/api/articles";
 import { LinkItem } from "../LinkItem";
 import { H2 } from "../Types/PageTypes";
 
-export const Projects = () => {
-  const [projects, setProjects] = useState<ProjectData[]>([]);
+export const Articles = () => {
+  const [articles, setArticles] = useState<ArticleData[]>([]);
 
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("/api/projects");
+      const res = await fetch("/api/articles");
       const data = await res.json();
 
-      setProjects(data);
+      setArticles(data);
     };
 
     getData();
@@ -20,9 +20,9 @@ export const Projects = () => {
 
   return (
     <StSection>
-      <H2>Projects</H2>
-      {projects.map((project) => {
-        return <LinkItem key={project.title} item={project} />;
+      <H2>Articles</H2>
+      {articles.map((article) => {
+        return <LinkItem key={article.title} item={article} />;
       })}
     </StSection>
   );

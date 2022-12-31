@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import styled from "styled-components";
+import { Articles } from "../components/sections/Articles";
 import { Landing } from "../components/sections/Landing";
 import { Projects } from "../components/sections/Projects";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <StMain>
         <Landing />
         <Projects />
+        <Articles />
       </StMain>
     </>
   );
