@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { ProjectData } from "../../pages/api/projects";
+import { Project } from "../Project";
 
 export const Projects = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
@@ -13,11 +15,17 @@ export const Projects = () => {
     };
 
     getData();
-
   }, []);
 
-  console.log(projects);
-
-
-  return null;
+  return (
+    <StSection>
+      {projects.map((project) => {
+        return <Project key={project.title} project={project} />;
+      })}
+    </StSection>
+  );
 };
+
+const StSection = styled.section`
+  background-color: black;
+`;

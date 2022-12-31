@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
-        <Projects/>
+        <Projects />
       </StMain>
     </>
   );
@@ -25,10 +25,6 @@ export default function Home() {
 const StMain = styled.main`
   background-color: black;
   height: 100vh;
-`;
-
-const StCard = styled.div`
-  background-color: red;
-  width: 100px;
-  height: 100px;
+  padding: 16px;
+  overflow-y: scroll;
 `;

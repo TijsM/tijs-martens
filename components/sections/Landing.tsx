@@ -17,7 +17,6 @@ const StSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 16px;
 `;
 
 const StSubText = styled.p`
