@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ProjectData } from "../../pages/api/projects";
 import { Project } from "../Project";
+import { H2 } from "../Types/PageTypes";
 
 export const Projects = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
@@ -19,6 +20,7 @@ export const Projects = () => {
 
   return (
     <StSection>
+      <H2>Projects</H2>
       {projects.map((project) => {
         return <Project key={project.title} project={project} />;
       })}
