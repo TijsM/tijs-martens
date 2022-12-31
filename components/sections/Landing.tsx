@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H1 } from "./Types";
+import { H1 } from "../Types/PageTypes";
 
 export const Landing = () => {
   return (

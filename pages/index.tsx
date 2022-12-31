@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
 
 import styled from "styled-components";
-import { Landing } from "../components/Landing";
+import { Landing } from "../components/sections/Landing";
+import { Projects } from "../components/sections/Projects";
 
 export default function Home() {
   return (
@@ -17,6 +16,7 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
+        <Projects/>
       </StMain>
     </>
   );
