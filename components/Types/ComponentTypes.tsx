@@ -17,7 +17,7 @@ export const SubTitle = styled.p`
 
   @media only screen and (min-width: 768px) {
     padding-top: 8px;
-    font-size: 18px;
+    font-size: px;
   }
 `;
 
@@ -37,10 +37,10 @@ export const StArticle = styled.article`
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  width: 500px;
   transition: 0.5s;
 
   @media only screen and (min-width: 768px) {
+    width: 500px;
     margin-right: 128px;
     margin-bottom: 48px;
   }
