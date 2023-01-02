@@ -1,3 +1,5 @@
+import Link from "next/link";
+import styled from "styled-components";
 import { ProjectData } from "../pages/api/projects";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
 
@@ -6,11 +8,21 @@ interface LinkItemProps {
 }
 
 export const LinkItem = ({ item }: LinkItemProps) => {
+  if (!item.link) {
+    return null;
+  }
+
   return (
-    <StArticle>
-      <Title>{item.title}</Title>
-      {item.role ? <SubTitle>{item.role}</SubTitle> : null}
-      <Body>{item.body}</Body>
-    </StArticle>
+    <StLink href={item.link} target="_blank">
+      <StArticle>
+        <Title>{item.title}</Title>
+        {item.role ? <SubTitle>{item.role}</SubTitle> : null}
+        <Body>{item.body}</Body>
+      </StArticle>
+    </StLink>
   );
 };
+
+const StLink = styled.a`
+  text-decoration: none;
+`;
