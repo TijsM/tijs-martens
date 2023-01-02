@@ -235,3 +235,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  font-family: Roboto;
+  scroll-behavior: smooth;
+  letter-spacing: 0.05em;
+}
