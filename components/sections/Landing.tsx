@@ -4,7 +4,9 @@ import { H1 } from "../Types/PageTypes";
 export const Landing = () => {
   return (
     <StSection>
-      <H1>Tijs Martens</H1>
+      <H1>
+        Tijs <br /> Martens
+      </H1>
       <StSubText>
         Full stack developer with a product passion based in Ghent, Belgium.
       </StSubText>
@@ -17,6 +19,7 @@ const StSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1000px;
 `;
 
 const StSubText = styled.p`

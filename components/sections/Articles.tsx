@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { ArticleData } from "../../pages/api/articles";
 import { LinkItem } from "../LinkItem";
+import { StSection } from "../styles/StSection";
+import { StItems } from "../Types/ComponentTypes";
 import { H2 } from "../Types/PageTypes";
 
 export const Articles = () => {
@@ -21,14 +23,11 @@ export const Articles = () => {
   return (
     <StSection>
       <H2>Articles</H2>
-      {articles.map((article) => {
-        return <LinkItem key={article.title} item={article} />;
-      })}
+      <StItems>
+        {articles.map((article) => {
+          return <LinkItem key={article.title} item={article} />;
+        })}
+      </StItems>
     </StSection>
   );
 };
-
-const StSection = styled.section`
-  background-color: black;
-  margin: 128px 0px;
-`;

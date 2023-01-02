@@ -17,8 +17,8 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
-        <Projects />
         <Articles />
+        <Projects />
       </StMain>
     </>
   );
@@ -29,4 +29,8 @@ const StMain = styled.main`
   height: 100vh;
   padding: 16px;
   overflow-y: scroll;
+
+  @media only screen and (min-width: 768px) {
+    padding: 16px 256px;
+  }
 `;
