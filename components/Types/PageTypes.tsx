@@ -5,7 +5,7 @@ export const H1 = styled.h1`
   font-size: 64px;
 
   @media only screen and (min-width: 768px) {
-    font-size: 128px;
+    font-size: 96px;
   }
 `;
 
@@ -15,7 +15,7 @@ export const H2 = styled.h2`
   margin: 48px 0px;
 
   @media only screen and (min-width: 768px) {
-    font-size: 64px;
+    font-size: 48px;
     margin: 64px 0px;
   }
 `;

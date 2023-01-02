@@ -20,19 +20,18 @@ const StContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  position: absolute;
+  /* position: absolute; */
   bottom: 48px;
 `;
 const StLink = styled.a`
-  /* text-decoration: none; */
   color: white;
-  font-size: 24px;
   opacity: 0.6;
   margin-right: 16px;
   padding-bottom: 20px;
 
+  font-size: 16px;
   @media only screen and (min-width: 768px) {
-    font-size: 32px;
+    font-size: 24px;
     margin-right: 16px;
   }
 `;

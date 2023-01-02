@@ -17,7 +17,7 @@ export const SubTitle = styled.p`
 
   @media only screen and (min-width: 768px) {
     padding-top: 8px;
-    font-size: 32px;
+    font-size: 18px;
   }
 `;
 
@@ -28,7 +28,7 @@ export const Body = styled.p`
   opacity: 0.6;
 
   @media only screen and (min-width: 768px) {
-    font-size: 24px;
+    font-size: 18px;
   }
 `;
 

@@ -5,14 +5,16 @@ import { Links } from "./Links";
 export const Landing = () => {
   return (
     <StSection>
-      <H1>
-        Tijs <br /> Martens
-      </H1>
-      <StSubText>
-        Full stack developer with a product passion based in Ghent, Belgium.
-      </StSubText>
+      <StContent>
+        <H1>
+          Tijs <br /> Martens
+        </H1>
+        <StSubText>
+          Full stack developer with a product passion based in Ghent, Belgium.
+        </StSubText>
 
-      <Links />
+        <Links />
+      </StContent>
     </StSection>
   );
 };
@@ -21,14 +23,23 @@ const StSection = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 1000px;
   position: relative;
 `;
 
+const StContent = styled.div`
+  margin: 128px 0px;
+`;
+
 const StSubText = styled.p`
-  font-size: 36px;
   color: white;
   opacity: 0.6;
   margin-top: 48px;
+
+  font-size: 24px;
+  @media only screen and (min-width: 768px) {
+    font-size: 32px;
+    margin-right: 16px;
+  }
 `;
