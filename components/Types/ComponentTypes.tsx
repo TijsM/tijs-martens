@@ -38,10 +38,15 @@ export const StArticle = styled.article`
   flex-direction: column;
   max-width: 500px;
   width: 500px;
+  transition: 0.5s;
 
   @media only screen and (min-width: 768px) {
     margin-right: 128px;
     margin-bottom: 48px;
+  }
+
+  :hover {
+    scale: 0.99;
   }
 `;
 

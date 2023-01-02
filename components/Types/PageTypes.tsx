@@ -13,7 +13,6 @@ export const H2 = styled.h2`
   color: white;
   font-size: 36px;
   margin: 48px 0px;
-  font-size: 128px;
 
   @media only screen and (min-width: 768px) {
     font-size: 64px;
