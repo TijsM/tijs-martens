@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { H1 } from "../Types/PageTypes";
+import { Links } from "./Links";
 
 export const Landing = () => {
   return (
@@ -10,6 +11,8 @@ export const Landing = () => {
       <StSubText>
         Full stack developer with a product passion based in Ghent, Belgium.
       </StSubText>
+
+      <Links />
     </StSection>
   );
 };
@@ -20,6 +23,7 @@ const StSection = styled.section`
   flex-direction: column;
   justify-content: center;
   max-width: 1000px;
+  position: relative;
 `;
 
 const StSubText = styled.p`

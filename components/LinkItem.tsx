@@ -1,6 +1,4 @@
-import Link from "next/link";
 import styled from "styled-components";
-import { ProjectData } from "../pages/api/projects";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
 
 interface LinkItemProps {
