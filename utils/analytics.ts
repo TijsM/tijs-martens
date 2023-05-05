@@ -5,6 +5,7 @@ export type AnalyticsTypes = "click";
 
 export type AnalyticsData = {
   event: {
+    category: "article" | "project"
     type: AnalyticsTypes;
     name: string;
   };

@@ -25,7 +25,7 @@ export const Projects = () => {
       <H2>Projects</H2>
       <StItems>
         {projects.map((project) => {
-          return <LinkItem key={project.title} item={project} />;
+          return <LinkItem key={project.title} item={{...project, type:"project"}}  />;
         })}
       </StItems>
     </StSection>

@@ -1,8 +1,15 @@
 import styled from "styled-components";
+import { logEvent } from "../utils/analytics";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
 
 interface LinkItemProps {
-  item: { title: string; body: string; link: string; role?: string };
+  item: {
+    title: string;
+    body: string;
+    link: string;
+    role?: string;
+    type: "article" | "project";
+  };
 }
 
 export const LinkItem = ({ item }: LinkItemProps) => {
@@ -10,8 +17,14 @@ export const LinkItem = ({ item }: LinkItemProps) => {
     return null;
   }
 
+  const onPress = () => {
+    logEvent({
+      event: { category: item.type, type: "click", name: "open_url" },
+    });
+  };
+
   return (
-    <StLink href={item.link} target="_blank">
+    <StLink href={item.link} target="_blank" onClick={onPress}>
       <StArticle>
         <Title>{item.title}</Title>
         {item.role ? <SubTitle>{item.role}</SubTitle> : null}
