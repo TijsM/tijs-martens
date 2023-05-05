@@ -36,7 +36,7 @@ export const StArticle = styled.article`
   padding: 24px 0px;
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  max-width: 400px;
   transition: 0.5s;
 
   @media only screen and (min-width: 768px) {

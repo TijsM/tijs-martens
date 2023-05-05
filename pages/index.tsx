@@ -19,8 +19,8 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
-        <Articles />
         <Projects />
+        <Articles />
       </StMain>
     </>
   );
