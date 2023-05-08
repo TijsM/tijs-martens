@@ -5,20 +5,17 @@ export type AnalyticsTypes = "click";
 
 export type AnalyticsData = {
   event: {
-    category: "article" | "project"
+    category: "article" | "project";
     type: AnalyticsTypes;
     name: string;
   };
 };
 
-const isDev = process.env.NODE_ENV === "development";
-
 export const initGA = () => {
-  if (!isDev) {
-    ReactGA.initialize([
-      { trackingId: process.env.GOOGLE_ANALYTICS_ID as string },
-    ]);
-  }
+  console.log("GA init");
+  ReactGA.initialize([
+    { trackingId: process.env.GOOGLE_ANALYTICS_ID as string },
+  ]);
 };
 
 export const logPageView = () => {
@@ -26,15 +23,16 @@ export const logPageView = () => {
 };
 
 export const logEvent = (data: AnalyticsData) => {
-  !isDev &&
-    ReactGA.event({
-      category: "Home",
-      action: data.event.type + " - " + data.event.name,
-    });
+  console.log("GA event", data);
+  ReactGA.event({
+    category: "Home",
+    action: data.event.type + " - " + data.event.name,
+  });
 };
 
 export const useLogPageView = () => {
   useEffect(() => {
+    console.log("in effect")
     initGA();
     logPageView();
   }, []);
