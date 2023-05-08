@@ -1,38 +1,33 @@
 import { useEffect } from "react";
-import ReactGA from "react-ga4";
-
-export type AnalyticsTypes = "click";
+// import ReactGA from "react-ga4";
+import posthog from "posthog-js";
 
 export type AnalyticsData = {
-  event: {
-    category: "article" | "project";
-    type: AnalyticsTypes;
-    name: string;
-  };
+  properties?: { [data: string]: any };
+  action: "click" | "view";
+  name: string;
 };
 
 export const initGA = () => {
-  console.log("GA init");
-  ReactGA.initialize([
-    { trackingId: process.env.GOOGLE_ANALYTICS_ID as string },
-  ]);
+  console.log(process.env.POSTHOG_ID as string, {
+    api_host: process.env.POSTHOG_API_HOST,
+  })
+  posthog.init(process.env.POSTHOG_ID as string, {
+    api_host: process.env.POSTHOG_API_HOST,
+  });
 };
 
 export const logPageView = () => {
-  ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+  posthog.capture("view_page", { pageName: window.location.pathname });
 };
 
 export const logEvent = (data: AnalyticsData) => {
-  console.log("GA event", data);
-  ReactGA.event({
-    category: "Home",
-    action: data.event.type + " - " + data.event.name,
-  });
+  console.log(data.action + "_" + data.name, { ...data.properties })
+  posthog.capture(data.action + "_" + data.name, { ...data.properties });
 };
 
 export const useLogPageView = () => {
   useEffect(() => {
-    console.log("in effect")
     initGA();
     logPageView();
   }, []);

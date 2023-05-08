@@ -19,7 +19,11 @@ export const LinkItem = ({ item }: LinkItemProps) => {
 
   const onPress = () => {
     logEvent({
-      event: { category: item.type, type: "click", name: "open_url" },
+      action: "click",
+      name: "open_" + item.type,
+      properties: {
+        urlName: item.title,
+      },
     });
   };
 
