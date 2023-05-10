@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import styled from "styled-components";
 import { logEvent } from "../utils/analytics";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
@@ -13,9 +14,15 @@ interface LinkItemProps {
 }
 
 export const LinkItem = ({ item }: LinkItemProps) => {
-  if (!item.link) {
-    return null;
-  }
+  const article = useMemo(() => {
+    return (
+      <StArticle>
+        <Title preventUnderline={!item.link}>{item.title}</Title>
+        {item.role ? <SubTitle>{item.role}</SubTitle> : null}
+        <Body>{item.body}</Body>
+      </StArticle>
+    );
+  }, [item.body, item.link, item.role, item.title]);
 
   const onPress = () => {
     logEvent({
@@ -27,13 +34,13 @@ export const LinkItem = ({ item }: LinkItemProps) => {
     });
   };
 
+  if (!item.link) {
+    return article;
+  }
+
   return (
     <StLink href={item.link} target="_blank" onClick={onPress}>
-      <StArticle>
-        <Title>{item.title}</Title>
-        {item.role ? <SubTitle>{item.role}</SubTitle> : null}
-        <Body>{item.body}</Body>
-      </StArticle>
+      {article}
     </StLink>
   );
 };

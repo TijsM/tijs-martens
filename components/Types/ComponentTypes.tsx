@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const Title = styled.p`
+export const Title = styled.p<{ preventUnderline?: boolean }>`
   color: white;
   font-size: 24px;
+
+  text-decoration: ${({ preventUnderline }) =>
+    preventUnderline ? "none" : "underline"};
 
   @media only screen and (min-width: 768px) {
     font-size: 32px;
