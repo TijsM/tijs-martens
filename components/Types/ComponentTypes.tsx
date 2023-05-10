@@ -4,8 +4,10 @@ export const Title = styled.p<{ preventUnderline?: boolean }>`
   color: white;
   font-size: 24px;
 
-  text-decoration: ${({ preventUnderline }) =>
+  /* text-decoration: ${({ preventUnderline }) =>
     preventUnderline ? "none" : "underline"};
+  
+  text-decoration-thickness: 1.5px; */
 
   @media only screen and (min-width: 768px) {
     font-size: 32px;
