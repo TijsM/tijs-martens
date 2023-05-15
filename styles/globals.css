@@ -241,3 +241,6 @@ html {
   scroll-behavior: smooth;
   letter-spacing: 0.05em;
 }
+html ::selection {
+  background: rgb(251, 0, 125);
+}
