@@ -9,7 +9,7 @@ interface LinkItemProps {
     body: string;
     link: string;
     role?: string;
-    type: "article" | "project";
+    type: "article" | "project" | "side-project";
   };
 }
 
