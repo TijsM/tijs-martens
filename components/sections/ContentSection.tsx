@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import { ProjectData } from "../../pages/api/projects";
 import { fetcher } from "../../utils/fetcher";
 import { LinkItem, LinkItemData } from "../LinkItem";
 import { StSection } from "../styles/StSection";
