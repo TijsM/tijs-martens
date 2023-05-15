@@ -17,7 +17,6 @@ export const SubTitle = styled.p`
 
   @media only screen and (min-width: 768px) {
     padding-top: 8px;
-    font-size: px;
   }
 `;
 
