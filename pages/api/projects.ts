@@ -6,7 +6,8 @@ export type ProjectData = {
   title: string;
   body: string;
   link: string;
-  role: string
+  role: string;
+  side?: boolean;
 };
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
@@ -19,6 +20,8 @@ export default function handler(
 ) {
   const airtableData: ProjectData[] = [];
 
+  const requestSideProjects = req.query.side === "true";
+
   base("projects")
     .select({
       maxRecords: 100,
@@ -27,14 +30,17 @@ export default function handler(
     .eachPage(
       function page(records) {
         records.forEach(function (record) {
-          //@ts-ignore
-
-          airtableData.push({
+          const isSideProject = !!record.get("side");
+          const formattedProject: ProjectData = {
             title: record.get("title") as string,
             body: record.get("body") as string,
             link: record.get("link") as string,
             role: record.get("role") as string,
-          });
+          };
+
+          if (requestSideProjects === isSideProject) {
+            airtableData.push(formattedProject);
+          }
         });
 
         res.status(200).json(airtableData);

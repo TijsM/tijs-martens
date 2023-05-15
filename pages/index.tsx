@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Articles } from "../components/sections/Articles";
 import { Landing } from "../components/sections/Landing";
 import { Projects } from "../components/sections/Projects";
+import { SideProjects } from "../components/sections/SideProjects";
 import { useLogPageView } from "../utils/analytics";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Landing />
         <Projects />
         <Articles />
+        <SideProjects />
       </StMain>
     </>
   );
