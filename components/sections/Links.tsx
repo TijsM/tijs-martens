@@ -8,7 +8,7 @@ export const Links = () => {
         <StLink href={"https://github.com/TijsM"} target="_blank">
           GitHub
         </StLink>
-        <StLink href={"www.linkedin.com/in/tijsm"} target="_blank">
+        <StLink href={"https://www.linkedin.com/in/tijsm"} target="_blank">
           LinkedIn
         </StLink>
       </StSection>
