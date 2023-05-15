@@ -1,31 +1,29 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
+import useSWR from "swr";
 import { ProjectData } from "../../pages/api/projects";
+import { fetcher } from "../../utils/fetcher";
 import { LinkItem } from "../LinkItem";
 import { StSection } from "../styles/StSection";
 import { StItems } from "../Types/ComponentTypes";
 import { H2 } from "../Types/PageTypes";
 
 export const Projects = () => {
-  const [projects, setProjects] = useState<ProjectData[]>([]);
+  const { data, error } = useSWR<ProjectData[]>("/api/projects", fetcher);
 
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("/api/projects");
-      const data = await res.json();
-
-      setProjects(data);
-    };
-
-    getData();
-  }, []);
+  if (error) {
+    return null;
+  }
 
   return (
     <StSection>
       <H2>Projects</H2>
       <StItems>
-        {projects.map((project) => {
-          return <LinkItem key={project.title} item={{...project, type:"project"}}  />;
+        {(data || []).map((project) => {
+          return (
+            <LinkItem
+              key={project.title}
+              item={{ ...project, type: "project" }}
+            />
+          );
         })}
       </StItems>
     </StSection>

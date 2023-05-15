@@ -20,7 +20,6 @@ const StContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  /* position: absolute; */
   bottom: 48px;
 `;
 const StLink = styled.a`
