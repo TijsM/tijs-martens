@@ -4,13 +4,15 @@ import { logEvent } from "../utils/analytics";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
 
 interface LinkItemProps {
-  item: {
-    title: string;
-    body: string;
-    link: string;
-    role?: string;
-    type: "article" | "project" | "side-project";
-  };
+  item: LinkItemData;
+}
+
+export interface LinkItemData {
+  title: string;
+  body: string;
+  link: string;
+  role?: string;
+  type: "article" | "project" | "side-project";
 }
 
 export const LinkItem = ({ item }: LinkItemProps) => {
