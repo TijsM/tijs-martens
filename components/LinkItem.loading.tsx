@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { StArticle, Title } from "./Types/ComponentTypes";
 
 export const LinkItemLoader = () => {
-  console.log("rendering");
   return (
     <StContainer>
       <StTitle />
