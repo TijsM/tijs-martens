@@ -5,6 +5,7 @@ import { ContentSection } from "../components/sections/ContentSection";
 import { Landing } from "../components/sections/Landing";
 import { Links } from "../components/sections/Links";
 import { useLogPageView } from "../utils/analytics";
+import { Cursor } from "../components/Cursor";
 
 export default function Home() {
   useLogPageView();
@@ -21,6 +22,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StMain>
+        <Cursor />
         <Landing />
         <ContentSection title={"Projects"} url={"/api/projects?side=false"} />
         <ContentSection title={"Articles"} url={"/api/articles"} />
