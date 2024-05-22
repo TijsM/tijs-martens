@@ -3,6 +3,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import { Landing } from "../components/sections/Landing";
 import { useLogPageView } from "../utils/analytics";
+import { Cursor } from "../components/Cursor";
 
 export default function Home() {
   useLogPageView();
@@ -19,6 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <StMain>
+        <Cursor />
         <Landing />
       </StMain>
     </>
