@@ -10,7 +10,8 @@ export const Landing = () => {
           Tijs <br /> Martens
         </H1>
         <StSubText>
-          Full stack developer with a product passion based in Ghent, Belgium.
+          Developer with a product passion based in Ghent, Belgium. I love to
+          optimize processes and improve the status quo.
         </StSubText>
 
         <Links />

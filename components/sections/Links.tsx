@@ -5,11 +5,11 @@ export const Links = () => {
   return (
     <StContainer>
       <StSection>
-        <StLink href={"https://github.com/TijsM"} target="_blank">
-          GitHub
-        </StLink>
         <StLink href={"https://www.linkedin.com/in/tijsm"} target="_blank">
           LinkedIn
+        </StLink>
+        <StLink href={"https://github.com/TijsM"} target="_blank">
+          GitHub
         </StLink>
       </StSection>
     </StContainer>
