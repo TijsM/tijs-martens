@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import Airtable, { apiKey } from "airtable";
+import Airtable from "airtable";
 
 export type ArticleData = {
   title: string;
@@ -14,6 +14,7 @@ const base = new Airtable({
 
 console.log({
   apiKey: process.env.AIRTABLE_APIAIRTABLE_PERSONAL_ACCESS_TOKEN_KEY,
+  baseId: process.env.AIRTABLE_BASE_ID,
 });
 
 export default function handler(
