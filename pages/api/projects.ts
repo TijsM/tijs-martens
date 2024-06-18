@@ -10,9 +10,9 @@ export type ProjectData = {
   side?: boolean;
 };
 
-const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-  process.env.AIRTABLE_BASE_ID as string
-);
+const base = new Airtable({
+  apiKey: process.env.AIRTABLE_APIAIRTABLE_PERSONAL_ACCESS_TOKEN_KEY,
+}).base(process.env.AIRTABLE_BASE_ID as string);
 
 export default function handler(
   req: NextApiRequest,

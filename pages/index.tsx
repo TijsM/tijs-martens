@@ -3,6 +3,8 @@ import Head from "next/head";
 import styled from "styled-components";
 import { Landing } from "../components/sections/Landing";
 import { useLogPageView } from "../utils/analytics";
+import { ContentSection } from "../components/sections/ContentSection";
+import { Links } from "../components/sections/Links";
 
 export default function Home() {
   useLogPageView();
@@ -20,6 +22,13 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
+        <ContentSection title={"Projects"} url={"/api/projects?side=false"} />
+        <ContentSection title={"Articles"} url={"/api/articles"} />
+        <ContentSection
+          title={"Side projects"}
+          url={"/api/projects?side=true"}
+        />
+        <Links />
       </StMain>
     </>
   );

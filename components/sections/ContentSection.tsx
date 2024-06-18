@@ -14,8 +14,10 @@ interface ContentSectionProps {
 export function ContentSection<T extends LinkItemData>({
   title,
   url,
-}: ContentSectionProps) {
+}: Readonly<ContentSectionProps>) {
   const { data, error, isLoading } = useSWR<T[]>(url, fetcher);
+
+  console.log(data, error);
 
   if (error) {
     return null;
