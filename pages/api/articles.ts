@@ -12,11 +12,6 @@ const base = new Airtable({
   apiKey: process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN,
 }).base(process.env.AIRTABLE_BASE_ID as string);
 
-console.log({
-  apiKey: process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN,
-  baseId: process.env.AIRTABLE_BASE_ID,
-});
-
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<ArticleData[]>
