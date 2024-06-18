@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     window.location.href =
-      "https://robust-morning-27f.notion.site/CV-899b03301c894df68055e5161e856d6e";
+      "https://tijs-martens.notion.site/CV-899b03301c894df68055e5161e856d6e";
   }, []);
 
   return (

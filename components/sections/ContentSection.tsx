@@ -17,8 +17,6 @@ export function ContentSection<T extends LinkItemData>({
 }: Readonly<ContentSectionProps>) {
   const { data, error, isLoading } = useSWR<T[]>(url, fetcher);
 
-  console.log(data, error);
-
   if (error) {
     return null;
   }
