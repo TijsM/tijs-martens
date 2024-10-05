@@ -11,6 +11,12 @@ export const Links = () => {
         <StLink href={"https://github.com/TijsM"} target="_blank">
           GitHub
         </StLink>
+        <StLink
+          href={"https://www.strava.com/athletes/48852110"}
+          target="_blank"
+        >
+          Strava
+        </StLink>
       </StSection>
     </StContainer>
   );
