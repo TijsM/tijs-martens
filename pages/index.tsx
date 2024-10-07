@@ -22,11 +22,20 @@ export default function Home() {
       </Head>
       <StMain>
         <Landing />
-        <ContentSection title={"Projects"} url={"/api/projects?side=false"} />
-        <ContentSection title={"Articles"} url={"/api/articles"} />
+        <ContentSection
+          title={"Projects"}
+          url={"/api/projects?side=false"}
+          type="project"
+        />
+        <ContentSection
+          title={"Articles"}
+          url={"/api/articles"}
+          type="article"
+        />
         <ContentSection
           title={"Side projects"}
           url={"/api/projects?side=true"}
+          type="side-project"
         />
         <Links />
       </StMain>

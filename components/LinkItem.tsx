@@ -2,17 +2,20 @@ import { useMemo } from "react";
 import styled from "styled-components";
 import { logEvent } from "../utils/analytics";
 import { Title, Body, SubTitle, StArticle } from "./Types/ComponentTypes";
+import { type } from "os";
 
 interface LinkItemProps {
   item: LinkItemData;
 }
+
+export type LinkItemType = "article" | "project" | "side-project";
 
 export interface LinkItemData {
   title: string;
   body: string;
   link: string;
   role?: string;
-  type: "article" | "project" | "side-project";
+  type: LinkItemType;
 }
 
 export const LinkItem = ({ item }: LinkItemProps) => {
