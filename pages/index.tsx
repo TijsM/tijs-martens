@@ -28,14 +28,14 @@ export default function Home() {
           type="project"
         />
         <ContentSection
-          title={"Articles"}
-          url={"/api/articles"}
-          type="article"
-        />
-        <ContentSection
           title={"Side projects"}
           url={"/api/projects?side=true"}
           type="side-project"
+        />
+        <ContentSection
+          title={"Articles"}
+          url={"/api/articles"}
+          type="article"
         />
         <Links />
       </StMain>
