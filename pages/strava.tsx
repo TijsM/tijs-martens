@@ -9,7 +9,7 @@ export default function Home() {
   useLogPageView();
 
   useEffect(() => {
-    window.location.href = "https://strava-year-review.vercel.app/start";
+    window.location.href = "https://strava-year-review.vercel.app";
   }, []);
 
   return (
