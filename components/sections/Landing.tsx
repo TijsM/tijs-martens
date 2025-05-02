@@ -10,8 +10,8 @@ export const Landing = () => {
           Tijs <br /> Martens
         </H1>
         <StSubText>
-          Developer with a product passion based in Ghent, Belgium. I love to
-          optimize processes and improve the status quo.
+          Developer with a product passion based in Den Bosch, The Netherlands.
+          <br />I love to optimize processes and improve the status quo.
         </StSubText>
 
         <Links />
@@ -25,7 +25,7 @@ const StSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 1000px;
+  max-width: 1100px;
   position: relative;
 `;
 

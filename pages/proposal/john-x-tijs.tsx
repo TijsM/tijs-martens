@@ -19,7 +19,7 @@ export default function Home() {
         <title>Tijs Martens</title>
         <meta
           name="description"
-          content="Full stack developer with a product passion based in Ghent, Belgium."
+          content="Full stack developer with a product passion based in Den Bosch, The Netherlands."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
